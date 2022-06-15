@@ -33,4 +33,12 @@ int main()
 	assert( angle_30 != angle_45 );
 	assert( angle_30 < angle_45 );
 	assert( angle_30 > angle_0 );
+
+	// Operator +-*/
+	const auto angle_15 = math::Angle::Deg( 15 );
+	assert( eq( angle_15 + angle_30, angle_45 ) );
+	assert( eq( angle_15 - angle_30, -angle_15 ) );
+	assert( eq( angle_15 * 2, angle_30 ) );
+	assert( eq( 2 * angle_15, angle_30 ) );
+	assert( eq( angle_30/2, angle_15 ) );
 }
