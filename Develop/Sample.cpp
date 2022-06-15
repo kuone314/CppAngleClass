@@ -47,4 +47,11 @@ int main()
 	assert( eq( math::Angle::Vertical().Deg(), 90 ) );
 	assert( eq( math::Angle::Flat().Deg(), 180 ) );
 	assert( eq( math::Angle::Full().Deg(), 360 ) );
+
+	// Normalize
+	assert( eq( math::Angle::Deg(  -30 ).Normalize<   0, 360>(), math::Angle::Deg(  330 ) ) );
+	assert( eq( math::Angle::Deg(  200 ).Normalize<-180, 180>(), math::Angle::Deg( -160 ) ) );
+	assert( eq( math::Angle::Deg(  200 ).Normalize<   0, 180>(), math::Angle::Deg(  160 ) ) );
+	assert( eq( math::Angle::Deg( -120 ).Normalize<   0,  90>(), math::Angle::Deg(   60 ) ) );
+	assert( eq( math::Angle::Deg( -120 ).Normalize< -90,  90>(), math::Angle::Deg(  -60 ) ) );
 }
