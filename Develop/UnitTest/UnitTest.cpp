@@ -79,6 +79,23 @@ public:
 		}
 	}
 
+	TEST_METHOD( Noremlize_2 ) {
+		Assert::AreEqual( math::Angle::Deg( 365 ).Normalize<0, 360>().Deg(), 5, tolerance );
+		Assert::AreEqual( math::Angle::Deg( -30 ).Normalize<0, 360>().Deg(), 330, tolerance );
+
+		Assert::AreEqual( math::Angle::Deg( 365 ).Normalize<-180, 180>().Deg(), 5, tolerance );
+		Assert::AreEqual( math::Angle::Deg( 330 ).Normalize<-180, 180>().Deg(), -30, tolerance );
+
+		Assert::AreEqual( math::Angle::Deg( 190 ).Normalize<0, 180>().Deg(), 170, tolerance );
+		Assert::AreEqual( math::Angle::Deg( -50 ).Normalize<0, 180>().Deg(), 50, tolerance );
+
+		Assert::AreEqual( math::Angle::Deg( 120 ).Normalize<0, 90>().Deg(), 60, tolerance );
+		Assert::AreEqual( math::Angle::Deg( 240 ).Normalize<0, 90>().Deg(), 60, tolerance );
+
+		Assert::AreEqual( math::Angle::Deg( 120 ).Normalize<-90, 90>().Deg(), 60, tolerance );
+		Assert::AreEqual( math::Angle::Deg( 300 ).Normalize<-90, 90>().Deg(), -60, tolerance );
+	}
+
 	TEST_METHOD( GetValue )
 	{
 		Assert::AreEqual( angle_0.Deg(), 0, tolerance ) ;
@@ -130,6 +147,18 @@ public:
 		Assert::AreEqual( math::Angle::Vertical().Deg(), 90, tolerance ) ;
 		Assert::AreEqual( math::Angle::Flat().Deg(), 180, tolerance ) ;
 		Assert::AreEqual( math::Angle::Full().Deg(), 360, tolerance ) ;
-	}
+	}	
+
+	TEST_METHOD( misc )
+	{
+		const auto a = math::Angle::Deg( -30 );
+		const auto b = math::Angle::Deg( +60 );
+		const auto c = math::Angle::Deg( 330 );
+
+		Assert::IsTrue( a < b );
+		Assert::IsFalse( a == c );
+
+		Assert::AreEqual( sin( angle_30 ), 0.5, tolerance );
+	}	
 };
 }

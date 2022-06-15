@@ -2,6 +2,8 @@
 #include "../Angle.h"
 #include <assert.h>
 
+#include <memory>
+
 
 bool eq( const double v_1, const double v_2 ) { return abs( v_1 - v_2 ) < 0.001; }
 bool eq( const math::Angle& v_1, const math::Angle& v_2 ) { return eq( v_1.Rad(), v_2.Rad() ); }
@@ -21,8 +23,10 @@ int main()
 	assert( eq( angle_45.Deg(), 45 ) );
 	assert( eq( angle_45.Rad(), M_PI / 4 ) );
 
+	const auto angle_ptr = std::make_shared<math::Angle>( math::Angle::Deg( 10 ) );
+	assert( eq( angle_ptr->Deg(), 10 ) );
 
-	// Operator Å}
+	// Operator ÔøΩ}
 	assert( eq(
 		-math::Angle::Deg( +30 ),
 		+math::Angle::Deg( -30 )
