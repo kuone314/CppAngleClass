@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AngleClass", "AngleClass\AngleClass.vcxproj", "{219DB726-5488-42C0-8C31-5321BE91C43D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{219DB726-5488-42C0-8C31-5321BE91C43D}.Release|x64.Build.0 = Release|x64
 		{219DB726-5488-42C0-8C31-5321BE91C43D}.Release|x86.ActiveCfg = Release|Win32
 		{219DB726-5488-42C0-8C31-5321BE91C43D}.Release|x86.Build.0 = Release|Win32
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Debug|x64.ActiveCfg = Debug|x64
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Debug|x64.Build.0 = Debug|x64
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Debug|x86.ActiveCfg = Debug|Win32
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Debug|x86.Build.0 = Debug|Win32
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Release|x64.ActiveCfg = Release|x64
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Release|x64.Build.0 = Release|x64
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Release|x86.ActiveCfg = Release|Win32
+		{5444C7C4-8F1B-4BD8-9F87-58E36D97D64B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
