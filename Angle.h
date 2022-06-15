@@ -69,6 +69,11 @@ constexpr inline Angle operator * ( const Angle& a, const double val ) { return 
 constexpr inline Angle operator / ( const Angle& a, const double val ) { return Angle::Rad( a.Rad() / val ) ; }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+inline double sin( const Angle& angle ) { return std::sin( angle.Rad() ) ; }
+inline double cos( const Angle& angle ) { return std::cos( angle.Rad() ) ; }
+inline double tan( const Angle& angle ) { return std::tan( angle.Rad() ) ; }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 template<>
 Angle Angle::Normalize<0, 360>() const
 {

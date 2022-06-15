@@ -54,4 +54,9 @@ int main()
 	assert( eq( math::Angle::Deg(  200 ).Normalize<   0, 180>(), math::Angle::Deg(  160 ) ) );
 	assert( eq( math::Angle::Deg( -120 ).Normalize<   0,  90>(), math::Angle::Deg(   60 ) ) );
 	assert( eq( math::Angle::Deg( -120 ).Normalize< -90,  90>(), math::Angle::Deg(  -60 ) ) );
+
+	// Trigonometric function
+	assert( eq( sin( angle_30 ), 0.5 ) );
+	assert( eq( cos( angle_15 ), cos( angle_15.Rad() ) ) );
+	assert( eq( tan( angle_45 ), 1 ) );
 }
