@@ -15,10 +15,18 @@ public:
 public:
 	constexpr double Rad() const noexcept { return m_rad; }
 	constexpr double Deg() const noexcept { return m_rad * rate_r_to_d ; }
-	
+
 public:
 	constexpr Angle operator +() const { return *this ; }
 	constexpr Angle operator -() const { return Angle{ -m_rad } ; }
+
+public:
+	constexpr bool operator == ( const Angle& a ) const { return m_rad == a.m_rad ; }
+	constexpr bool operator != ( const Angle& a ) const { return m_rad != a.m_rad ; }
+	constexpr bool operator <  ( const Angle& a ) const { return m_rad  < a.m_rad ; }
+	constexpr bool operator >  ( const Angle& a ) const { return m_rad  > a.m_rad ; }
+	constexpr bool operator <= ( const Angle& a ) const { return m_rad <= a.m_rad ; }
+	constexpr bool operator >= ( const Angle& a ) const { return m_rad >= a.m_rad ; }
 
 private:
 	explicit constexpr Angle( const double rad ) noexcept :m_rad{ rad } {}

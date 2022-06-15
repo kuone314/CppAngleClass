@@ -27,4 +27,10 @@ int main()
 		-math::Angle::Deg( +30 ),
 		+math::Angle::Deg( -30 )
 	) );
+
+	// Compare
+	assert( angle_30 == angle_30 );
+	assert( angle_30 != angle_45 );
+	assert( angle_30 < angle_45 );
+	assert( angle_30 > angle_0 );
 }
