@@ -17,6 +17,12 @@ public:
 	constexpr double Deg() const noexcept { return m_rad * rate_r_to_d ; }
 
 public:
+	static constexpr Angle Zero() { return Rad( 0 ) ; }
+	static constexpr Angle Vertical() { return Rad( M_PI / 2 ) ; }
+	static constexpr Angle Flat() { return Rad( M_PI ) ; }
+	static constexpr Angle Full() { return Rad( 2 * M_PI ) ; }
+
+public:
 	constexpr Angle operator +() const { return *this ; }
 	constexpr Angle operator -() const { return Angle{ -m_rad } ; }
 

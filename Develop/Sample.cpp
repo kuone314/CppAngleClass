@@ -40,5 +40,11 @@ int main()
 	assert( eq( angle_15 - angle_30, -angle_15 ) );
 	assert( eq( angle_15 * 2, angle_30 ) );
 	assert( eq( 2 * angle_15, angle_30 ) );
-	assert( eq( angle_30/2, angle_15 ) );
+	assert( eq( angle_30 / 2, angle_15 ) );
+
+	// Charactaristic Angle
+	assert( eq( math::Angle::Zero().Deg(), 0 ) );
+	assert( eq( math::Angle::Vertical().Deg(), 90 ) );
+	assert( eq( math::Angle::Flat().Deg(), 180 ) );
+	assert( eq( math::Angle::Full().Deg(), 360 ) );
 }
